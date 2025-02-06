@@ -81,4 +81,3 @@ app.MapGet("/", () =>"host server is running");
 
 app.Run();
 
-  // "server=bzya3kqt0sunqugpipdi-mysql.services.clever-cloud.com;user=uxixjlvlsxn5ddn7;password=8dphRAj4T8adkPPcmJq4;database=bzya3kqt0sunqugpipdi;ssl_disabled=True"
