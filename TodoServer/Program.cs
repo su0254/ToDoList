@@ -40,7 +40,7 @@ if (app.Environment.IsDevelopment())
 // מיפוי ה-routes
 
 // שליפת כל המשימות
-app.MapGet("/items", async (ToDoDbContext db) =>
+app.MapGet("/", async (ToDoDbContext db) =>
 {
     var items = await db.Items.ToListAsync();
     return Results.Ok(items);
