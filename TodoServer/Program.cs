@@ -40,11 +40,13 @@ if (app.Environment.IsDevelopment())
 // מיפוי ה-routes
 
 // שליפת כל המשימות
-app.MapGet("/", async (ToDoDbContext db) =>
+app.MapGet("/item", async (ToDoDbContext db) =>
 {
     var items = await db.Items.ToListAsync();
     return Results.Ok(items);
 });
+
+
 
 // הוספת משימה חדשה
 app.MapPost("/item", async (ToDoDbContext db, Item item) =>
@@ -75,5 +77,8 @@ app.MapDelete("/item/{id}", async (int id, ToDoDbContext db) =>
     return Results.NoContent();
 });
 
+app.MapGet("/", () =>"host server is running");
+
 app.Run();
 
+  // "server=bzya3kqt0sunqugpipdi-mysql.services.clever-cloud.com;user=uxixjlvlsxn5ddn7;password=8dphRAj4T8adkPPcmJq4;database=bzya3kqt0sunqugpipdi;ssl_disabled=True"
